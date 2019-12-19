@@ -1,0 +1,24 @@
+spring:
+  rabbitmq:
+    addresses: hadooooop
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 10000
+    listener:
+      simple:
+        acknowledge-mode: manual
+        concurrency: 5
+        max-concurrency: 10
+      order:
+        queue:
+          name: topic.queue.order
+          durable: true
+        exchange:
+          name: topic.exchange.order
+          durable: true
+          type: topic
+          ignore-declaration-exceptions: true
+        key: springboot.*
+
+
