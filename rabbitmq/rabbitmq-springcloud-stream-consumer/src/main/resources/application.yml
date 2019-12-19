@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    stream:
+      bindings:
+        input_channel:
+          destination: topic.exchange.cloud
+          group: topic.queue.cloud
+          binder: rabbit_cluster
+          consumer:
+            concurrency: 1
+      rabbit:
+        bindings:
+          input_channel:
+            consumer:
+              requeue-rejected: false
+              acknowledge-mode: manual
+              recovery-interval: 3000
+              durable-subscription: true
+              max-concurrency: 5
+      binders:
+        rabbit_cluster:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                addresses: hadooooop:5672
+                username: guest
+                password: guest
+                virtual-host: /

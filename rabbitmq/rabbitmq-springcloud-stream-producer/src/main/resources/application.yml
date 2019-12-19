@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    stream:
+      bindings:
+        output_channel:
+          destination: topic.exchange.cloud
+          group: topic.queue.cloud
+          binder: rabbit_cluster
+      binders:
+        rabbit_cluster:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                addresses: hadooooop:5672
+                username: guest
+                password: guest
+                virtual-host: /
