@@ -24,7 +24,7 @@
     <!-- zookeeper客户端-->
     <bean id="client" class="org.apache.curator.framework.CuratorFrameworkFactory" factory-method="newClient" init-method="start">
         <!-- zk服务地址，集群用","分隔-->
-        <constructor-arg index="0" value="192.168.110.128:2181"/>
+        <constructor-arg index="0" value="hadooooop:2181"/>
         <!-- session timeout 会话超时时间-->
         <constructor-arg index="1" value="1000"/>
         <!-- connectionTimeoutMs 创建连接超时时间-->

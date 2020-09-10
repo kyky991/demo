@@ -12,8 +12,8 @@ public class ZKConnect implements Watcher {
 
     final static Logger log = LoggerFactory.getLogger(ZKConnect.class);
 
-    private final static String ZK_SERVER_PATH = "192.168.110.128:2181";
-//    private final static String ZK_SERVER_PATH = "192.168.110.128:2181,192.168.110.128:2182,192.168.110.128:2183";
+    private final static String ZK_SERVER_PATH = "hadooooop:2181";
+//    private final static String ZK_SERVER_PATH = "hadooooop:2181,hadooooop:2182,hadooooop:2183";
     private final static Integer TIMEOUT = 5000;
 
     public void process(WatchedEvent event) {

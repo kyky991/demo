@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 public class Client3 {
 
 	public CuratorFramework client = null;
-	public static final String zkServerPath = "192.168.110.128:2181";
+	public static final String zkServerPath = "hadooooop:2181";
 
 	public Client3() {
 		RetryPolicy retryPolicy = new RetryNTimes(3, 5000);

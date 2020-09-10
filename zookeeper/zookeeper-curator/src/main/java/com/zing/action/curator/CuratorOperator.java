@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CuratorOperator {
 
-    private final static String ZK_SERVER_PATH = "192.168.110.128:2181";
+    private final static String ZK_SERVER_PATH = "hadooooop:2181";
     private final static Integer TIMEOUT = 10000;
     private final static String ADD_PATH = "/curator/test/add";
 
