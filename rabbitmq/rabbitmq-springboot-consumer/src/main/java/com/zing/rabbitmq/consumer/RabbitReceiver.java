@@ -32,6 +32,20 @@ public class RabbitReceiver {
         channel.basicAck(deliveryTag, false);
     }
 
+    /**
+     * spring.rabbitmq.listener.order.queue.name=queue-2
+     * spring.rabbitmq.listener.order.queue.durable=true
+     * spring.rabbitmq.listener.order.exchange.name=exchange-1
+     * spring.rabbitmq.listener.order.exchange.durable=true
+     * spring.rabbitmq.listener.order.exchange.type=topic
+     * spring.rabbitmq.listener.order.exchange.ignoreDeclarationExceptions=true
+     * spring.rabbitmq.listener.order.key=springboot.*
+     *
+     * @param order
+     * @param channel
+     * @param headers
+     * @throws Exception
+     */
     @RabbitListener(bindings = @QueueBinding(
             value = @Queue(value = "${spring.rabbitmq.listener.order.queue.name}",
                     durable = "${spring.rabbitmq.listener.order.queue.durable}"),
