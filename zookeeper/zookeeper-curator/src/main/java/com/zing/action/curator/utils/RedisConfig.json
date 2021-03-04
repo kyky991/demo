@@ -1,4 +1,4 @@
-{"type":"add","url":"ftp://192.168.110.128/config/redis.xml","remark":"add"}
+{"type":"add","url":"ftp://hadooooop/config/redis.xml","remark":"add"}
 
-{"type":"update","url":"ftp://192.168.110.128/config/redis.xml","remark":"update"}
+{"type":"update","url":"ftp://hadooooop/config/redis.xml","remark":"update"}
 {"type":"delete","url":"","remark":"delete"}

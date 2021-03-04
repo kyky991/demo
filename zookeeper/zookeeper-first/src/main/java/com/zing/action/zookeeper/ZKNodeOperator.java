@@ -15,7 +15,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class ZKNodeOperator implements Watcher {
 
-    private final static String ZK_SERVER_PATH = "192.168.110.128:2181";
+    private final static String ZK_SERVER_PATH = "hadooooop:2181";
     private final static Integer TIMEOUT = 5000;
 
     private ZooKeeper zookeeper = null;
