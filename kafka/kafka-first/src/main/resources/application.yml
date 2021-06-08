@@ -1,0 +1,4 @@
+kafka:
+  bootstrap-servers: kafkkkkka:9092
+  acks: all
+  partitioner-class: com.zing.kafka.producer.SamplePartitioner
