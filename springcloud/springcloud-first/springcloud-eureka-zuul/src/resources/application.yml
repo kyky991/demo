@@ -1,0 +1,29 @@
+server:
+  port: 8800
+spring:
+  application:
+    name: app-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+zuul:
+  routes:
+    api-member:
+      path: /api-member/**
+      serviceId: app-member
+    api-order:
+      path: /api-order/**
+      serviceId: app-order

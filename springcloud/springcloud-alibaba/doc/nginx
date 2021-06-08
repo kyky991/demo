@@ -1,0 +1,13 @@
+upstream nacos {
+	server 127.0.0.1:8848;
+	server 127.0.0.1:8849;
+	server 127.0.0.1:8850;
+}
+
+server {
+	listen 80;
+	server_name nacos.zing.com
+	location /nacos/ {
+		proxy_pass http://nacos/nacos/;
+	}
+}

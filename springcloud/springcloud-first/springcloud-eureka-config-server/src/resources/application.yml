@@ -1,0 +1,17 @@
+server:
+  port: 8700
+spring:
+  application:
+    name: app-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/cyunzing/config-repo.git
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+    register-with-eureka: true
+    fetch-registry: true

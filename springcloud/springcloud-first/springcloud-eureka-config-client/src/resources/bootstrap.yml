@@ -1,0 +1,22 @@
+server:
+  port: 8710
+spring:
+  application:
+    name: simple
+  cloud:
+    config:
+      profile: dev
+      discovery:
+        service-id: app-config-server
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

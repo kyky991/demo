@@ -1,0 +1,39 @@
+server:
+  port: 8910
+spring:
+  application:
+    name: app-order
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+
+ribbon:
+  ##建立连接所用的时间
+  ReadTimeout: 3000
+  ##建立连接后从服务器读取到资源所用的时间
+  ConnectTimeout: 3000
+
+##开启Hystrix断路器
+feign:
+  hystrix:
+    enabled: true
+
+##hystrix禁止服务超时时间
+hystrix:
+  command:
+    #default全局有效，service id指定应用有效
+    default:
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制,为true,则超时作为熔断根据
+          enabled: true
+        isolation:
+          thread:
+            #断路器超时时间，默认1000ms
+            timeoutInMilliseconds: 5000

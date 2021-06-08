@@ -1,0 +1,11 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: zk-member
+  cloud:
+    consul:
+      host: consul
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1

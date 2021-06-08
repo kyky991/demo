@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: blog-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: nacos.zing.com
+        file-extension: yml

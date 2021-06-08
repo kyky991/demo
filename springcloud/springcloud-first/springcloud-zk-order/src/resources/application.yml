@@ -1,0 +1,8 @@
+server:
+  port: 9200
+spring:
+  application:
+    name: zk-order
+  cloud:
+    zookeeper:
+      connect-string: kafka:2181

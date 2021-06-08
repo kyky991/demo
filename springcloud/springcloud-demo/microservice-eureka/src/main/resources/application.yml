@@ -1,0 +1,13 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: microservice-eureka-server
+eureka:
+  instance:
+    hostname: eureka1
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: false

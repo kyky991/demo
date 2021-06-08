@@ -1,0 +1,137 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    url: jdbc:mysql://mysqqqqql01:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos.zing.com
+        # 服务隔离，默认public
+        namespace: 332cee00-5754-4138-8166-f2b562bec976
+        cluster-name: local3
+        # 元数据
+        metadata:
+          version: v2
+          target-version: v1
+    sentinel:
+      # 懒加载
+      eager: false
+      filter:
+        # 打开/关闭对SpringMVC端点的保护
+        enabled: true
+      transport:
+        # 指定sentinel控制台地址
+        dashboard: hadooooop:8080
+        # 指定和控制台通信的IP
+        # 如不设置，会自动选择一个IP注册
+        # TransportConfig.HEARTBEAT_CLIENT_IP
+        client-ip: clouuuuud
+        # 指定和控制台通信的端口，默认8719
+        # 如不设置，会自动从8719开始扫描，依次+1，直到找到未被占用的端口
+        port: 8719
+        # 心跳发送周期，默认null
+        # 但在SimpleHttpHeartbeatSender会用默认值10秒
+        heartbeat-interval-ms: 1000
+    stream:
+      rocketmq:
+        binder:
+          name-server: rocektmq-namesrv1:9876;rocektmq-namesrv1:9876
+        bindings:
+          output:
+            producer:
+              transactional: true
+              group: blog-tx-group
+      bindings:
+        output:
+          # 指定topic
+          destination: stream-test-topic
+        my-output:
+          destination: stream-my-topic
+        points-output:
+          destination: points-topic
+  zipkin:
+    base-url: http://hadooooop:9411/
+    discovery-client-enabled: false
+  sleuth:
+    sampler:
+      # 抽样率 默认0.1(10%)
+      probability: 1.0
+# 默认在第一次请求的时候创建RibbonClient，这样会导致第一次请求较慢，可设置饥饿加载
+ribbon:
+  eager-load:
+    # 饥饿加载
+    enabled: true
+    # 可针对某一服务
+    clients: user-service
+# 指定某服务的ribbon配置，也可以使用JavaConfig形式配置
+#user-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+#    # 默认ping的url为 xxx.xxx.xxx.xxx:${port}/，没有pingAppendString
+#    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
+logging:
+  level:
+    # JavaConfig 的 feign 日志配置 与 logging.level 结合才能打印出请求日志
+    com.zing.springcloudalibaba.feign.UserFeign: debug
+    com.alibaba.nacos: error
+feign:
+  # feign整合sentinel
+  sentinel:
+    enabled: true
+  # feign请求使用连接池，性能提升15%，还可以设置合理的feign日志级别，提升性能，(设置Basic即可，不用Full)
+  httpclient:
+    # 配置feign使用httpclient，而不是默认的urlconnection
+    enabled: true
+    # feign的最大连接数
+    max-connections: 200
+    # feign单个路径的最大连接数
+    max-connections-per-route: 50
+  client:
+    config:
+      # 全局配置
+      default:
+        # 连接超时
+        connectTimeout: 5000
+        # 读取超时
+        readTimeout: 5000
+        loggerLevel: full
+#        errorDecoder:
+#        retryer:
+#        requestInterceptors:
+#          -
+#        # 是否对404错误码解析
+#        decode404: false
+#        encoder:
+#        decoder:
+#        contract:
+# 针对单个服务的配置
+#      user-service:
+#        loggerLevel: full
+# @FeignClient支持占位符
+user-service-feign:
+  name: user
+  url: http://localhost:8100
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+resttemplate:
+  sentinel:
+    # 打开/关闭 @SentinelRestTemplate 注解
+    enabled: true
+rocketmq:
+  client:
+    logUseSlf4j: true
+  name-server: rocektmq-namesrv1:9876;rocektmq-namesrv1:9876
+  producer:
+    # 小坑：必须指定group
+    group: test-group

@@ -1,0 +1,10 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: spring-boot-admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos.zing.com
+        namespace: 332cee00-5754-4138-8166-f2b562bec976

@@ -1,0 +1,14 @@
+version: "3"
+services:
+  search:
+    container_name: search
+    image: java8-base
+    ports:
+      - 8081:80
+    volumes:
+      - /home/search/logs:/home/search/logs
+    environment:
+      JAVA_OPTS: 
+    restart: always
+    healthcheck:
+      test: curl --slient --fai localhost/api/health || exit 1
