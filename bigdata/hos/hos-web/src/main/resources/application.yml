@@ -1,0 +1,56 @@
+server:
+  port: 8090
+  compression:
+    enabled: true
+    min-response-size: 1024
+  tomcat:
+    max-http-post-size: 400MB
+  servlet:
+    application-display-name: Hos
+    # session (time unit:seconds)
+    session:
+      cookie:
+        max-age: 1800s
+      timeout: 1800s
+spring:
+  servlet:
+    multipart:
+      max-file-size: 400MB
+      max-request-size: 400MB
+      file-size-threshold: 20MB
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+  datasource:
+    hikari:
+#      jdbc-url: jdbc:phoenix:hadooooop:2181
+#      driver-class-name: org.apache.phoenix.jdbc.PhoenixDriver
+      jdbc-url: jdbc:mysql://localhost:3306/hos?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+      maximum-pool-size: 20
+      minimum-idle: 2
+      validation-timeout: 300000
+      idle-timeout: 600000
+      connection-test-query: SELECT 1
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  # mybatis 对应的实体类
+  type-aliases-package: com.zing.bigdata.hos.common
+  # mybatis 对应的映射文件路径
+  # 多项目中的mapper文件，需要写classpath*所有模块的mapper文件
+  mapper-locations: classpath*:mapper/*Mapper.xml
+logging:
+  level:
+    com: trace
+hbase:
+  zookeeper:
+    quorum: hadooooop
+    property:
+      clientPort: 2181
+hadoop:
+  conf:
+    dir: d:/tmp
+  url: hdfs://hadooooop:9000
+

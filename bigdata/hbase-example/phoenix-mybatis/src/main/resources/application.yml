@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:phoenix:hadooooop:2181
+      driver-class-name: org.apache.phoenix.jdbc.PhoenixDriver
+#      jdbc-url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false
+#      driver-class-name: com.mysql.jdbc.Driver
+#      username: root
+#      password: 123456
+      maximum-pool-size: 20
+      minimum-idle: 2
+      validation-timeout: 300000
+      idle-timeout: 600000
+      connection-test-query: SELECT 1
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  # mybatis对应的实体类
+  type-aliases-package: com.zing.bigdata.hbase.phoenix.model
+  # mybatis对应的映射文件路径
+  mapper-locations: classpath:mapper/*.xml
