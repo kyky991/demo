@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zing.netty.easychat.mapper.UserMapperCustom">
+
+    <select id="queryFriendRequests" resultType="com.zing.netty.easychat.pojo.vo.FriendRequestVO" parameterType="String">
+
+        SELECT
+            sender.id AS sendUserId,
+            sender.username AS sendUsername,
+            sender.face_image AS sendFaceImage,
+            sender.nickname AS sendNickname
+        FROM
+            friend_request fr
+        LEFT JOIN
+            user sender
+        ON
+            fr.send_user_id = sender.id
+        WHERE
+            fr.accept_user_id = #{acceptUserId}
+
+    </select>
+
+    <select id="queryMyFriends" resultType="com.zing.netty.easychat.pojo.vo.MyFriendVO" parameterType="String">
+        SELECT
+            u.id AS friendUserId,
+            u.username AS friendUsername,
+            u.face_image AS friendFaceImage,
+            u.nickname AS friendNickname
+        FROM
+            my_friend mf
+        LEFT JOIN
+            user u
+        ON
+            u.id = mf.my_friend_user_id
+        WHERE
+            mf.my_user_id = #{userId}
+
+    </select>
+
+    <update id="updateMessageSignedBatch">
+        UPDATE chat_msg SET sign_flag = 1
+        WHERE
+            id
+        IN
+            <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+    </update>
+
+</mapper>
