@@ -5,21 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zing</groupId>
-    <artifactId>study</artifactId>
+    <artifactId>rocketmq</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>bigdata</module>
-        <module>concurrent</module>
-        <module>kafka</module>
-        <module>netty</module>
-        <module>quartz</module>
-        <module>rabbitmq</module>
-        <module>rocketmq</module>
-        <module>springcloud</module>
-        <module>springmvc</module>
-        <module>zookeeper</module>
+        <module>rocketmq-api</module>
     </modules>
 
 </project>
