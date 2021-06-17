@@ -1,4 +1,4 @@
-package com.zing.rocketmq.quickstart;
+package com.zing.rocketmq.model;
 
 import com.zing.rocketmq.Constant;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
@@ -14,30 +14,16 @@ import java.util.List;
 public class Consumer {
 
     public static void main(String[] args) throws Exception {
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test_consumer_group");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test_consumer_model_group");
         consumer.setNamesrvAddr(Constant.NAMESRV_ADDR);
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_LAST_OFFSET);
-        consumer.subscribe("test_topic", "*");
+        consumer.subscribe("test_topic_tag", "Tag1 || Tag2");
         consumer.setMessageModel(MessageModel.CLUSTERING);
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
                 MessageExt ext = msgs.get(0);
                 System.out.println(ext);
-
-                try {
-                    int i = 1 / 0;
-                } catch (Exception e) {
-                    int reconsumeTimes = ext.getReconsumeTimes();
-                    System.out.println(reconsumeTimes);
-
-                    if (reconsumeTimes == 1) {
-                        System.out.println("no reconsume");
-                        return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
-                    }
-
-                    return ConsumeConcurrentlyStatus.RECONSUME_LATER;
-                }
                 return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
             }
         });
