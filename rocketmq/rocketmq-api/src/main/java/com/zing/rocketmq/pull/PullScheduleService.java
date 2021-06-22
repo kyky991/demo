@@ -14,7 +14,7 @@ public class PullScheduleService {
         MQPullConsumerScheduleService service = new MQPullConsumerScheduleService("test_consumer_pull_group");
         service.getDefaultMQPullConsumer().setNamesrvAddr(Constant.NAMESRV_ADDR);
         service.setMessageModel(MessageModel.CLUSTERING);
-        service.registerPullTaskCallback("test_topic_pull", new PullTaskCallback() {
+        service.registerPullTaskCallback("test_pull_topic", new PullTaskCallback() {
             @Override
             public void doPullTask(MessageQueue mq, PullTaskContext context) {
                 MQPullConsumer consumer = context.getPullConsumer();

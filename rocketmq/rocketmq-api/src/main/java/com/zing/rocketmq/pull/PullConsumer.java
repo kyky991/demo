@@ -20,7 +20,7 @@ public class PullConsumer {
         consumer.setNamesrvAddr(Constant.NAMESRV_ADDR);
         consumer.start();
 
-        Set<MessageQueue> mqs = consumer.fetchSubscribeMessageQueues("test_topic_pull");
+        Set<MessageQueue> mqs = consumer.fetchSubscribeMessageQueues("test_pull_topic");
         for (MessageQueue mq : mqs) {
             SINGLE_MQ:
             while (true) {

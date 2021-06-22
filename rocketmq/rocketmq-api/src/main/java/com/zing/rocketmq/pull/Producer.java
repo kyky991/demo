@@ -8,12 +8,12 @@ import org.apache.rocketmq.common.message.Message;
 public class Producer {
 
     public static void main(String[] args) throws Exception {
-        DefaultMQProducer producer = new DefaultMQProducer("test_producer_pull_group");
+        DefaultMQProducer producer = new DefaultMQProducer("test_pull_producer_group");
         producer.setNamesrvAddr(Constant.NAMESRV_ADDR);
         producer.start();
 
         for (int i = 0; i < 10; i++) {
-            Message message = new Message("test_topic_pull", "Tag1", "key", ("hello" + i).getBytes());
+            Message message = new Message("test_pull_topic", "Tag1", "key", ("hello" + i).getBytes());
             SendResult result = producer.send(message);
             System.out.println(result);
 
