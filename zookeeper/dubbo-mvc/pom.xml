@@ -46,7 +46,7 @@
         <jedis.version>2.9.0</jedis.version>
         <apache-commons-pool2>2.6.0</apache-commons-pool2>
         <log4j.version>1.2.16</log4j.version>
-        <dubbo.version>2.6.2</dubbo.version>
+        <dubbo.version>2.7.8</dubbo.version>
         <netty-all.version>4.1.31.Final</netty-all.version>
         <zookeeper.version>3.4.13</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
@@ -230,7 +230,7 @@
 
             <!-- 引入dubbo -->
             <dependency>
-                <groupId>com.alibaba</groupId>
+                <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
