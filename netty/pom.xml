@@ -23,7 +23,7 @@
     </modules>
 
     <properties>
-        <netty.version>4.1.54.Final</netty.version>
+        <netty-all.version>4.1.54.Final</netty-all.version>
         <protostuff.version>1.7.2</protostuff.version>
     </properties>
 
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>${netty.version}</version>
+            <version>${netty-all.version}</version>
         </dependency>
 
         <dependency>
