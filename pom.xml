@@ -17,6 +17,7 @@
         <module>quartz</module>
         <module>rabbitmq</module>
         <module>rocketmq</module>
+        <module>springboot</module>
         <module>springcloud</module>
         <module>springmvc</module>
         <module>zookeeper</module>

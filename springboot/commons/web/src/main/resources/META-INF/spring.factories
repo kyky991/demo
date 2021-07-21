@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.zing.common.web.ApplicationConfiguration, \
+com.zing.common.web.handler.GlobalExceptionHandler

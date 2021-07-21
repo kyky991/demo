@@ -1,0 +1,37 @@
+{
+  "properties": [
+    {
+      "name": "delay.task.enabled",
+      "type": "java.lang.Boolean",
+      "description": "enabled delay task or not.",
+      "sourceType": "com.zing.common.task.props.TaskProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "delay.task.redis.enabled",
+      "type": "java.lang.Boolean",
+      "description": "enabled based on redis delay task or not.",
+      "sourceType": "com.zing.common.task.props.TaskProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "delay.task.redis.key",
+      "type": "java.lang.String",
+      "description": "delay task redis key.",
+      "sourceType": "com.zing.common.task.props.TaskProperties"
+    },
+    {
+      "name": "delay.task.redisson.enabled",
+      "type": "java.lang.Boolean",
+      "description": "enabled based on redisson delay task or not.",
+      "sourceType": "com.zing.common.task.props.TaskProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "delay.task.redisson.key",
+      "type": "java.lang.String",
+      "description": "delay task redisson key.",
+      "sourceType": "com.zing.common.task.props.TaskProperties"
+    }
+  ]
+}

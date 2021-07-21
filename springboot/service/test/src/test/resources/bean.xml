@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:fly="http://www.zing.com/schema/fly"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.zing.com/schema/fly
+       http://www.zing.com/schema/fly/fly.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <alias name="replacer" alias="replacer2"/>
+    <alias name="replacer2" alias="replacer3"/>
+
+    <import resource="common.xml"/>
+
+    <beans profile="dev">
+        <bean id="teacher" class="com.zing.test.domain.Teacher"/>
+        <bean id="student" class="com.zing.test.domain.Student"/>
+        <bean id="getBeanTest" class="com.zing.test.domain.GetBeanTest">
+            <lookup-method name="getPerson" bean="teacher"/>
+        </bean>
+
+        <bean id="replacer" class="com.zing.test.domain.Replacer"/>
+        <bean id="changeMethod" class="com.zing.test.domain.ChangeMethod">
+            <replaced-method name="change" replacer="replacer"/>
+        </bean>
+
+        <fly:bar id="testBar" name="test-bar"/>
+
+        <bean id="car" class="com.zing.test.domain.CarFactoryBean"/>
+
+        <tx:annotation-driven/>
+    </beans>
+
+</beans>

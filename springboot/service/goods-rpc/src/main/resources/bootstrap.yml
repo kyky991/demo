@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: goods-rpc
+  cloud:
+    nacos:
+      server-addr: nacos.zing:8848
+      discovery:
+        enabled: true
+        register-enabled: true
+        server-addr: ${spring.cloud.nacos.server-addr}
+      config:
+        server-addr: ${spring.cloud.nacos.server-addr}
+
+dubbo:
+  scan:
+    base-packages: com.zing.goods.rpc
+  application:
+    qos-enable: true
+  registry:
+#    protocol: nacos
+#    address: ${spring.cloud.nacos.server-addr}
+    address: spring-cloud://localhost
+  protocol:
+    name: dubbo
+    port: -1
+  consumer:
+    check: false
+  cloud:
+    subscribed-services:
