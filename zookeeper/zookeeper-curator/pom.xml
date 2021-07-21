@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jackson.version>2.9.6</jackson.version>
+        <jackson.version>2.12.2</jackson.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <zookeeper.version>3.4.13</zookeeper.version>
         <curator.version>4.0.1</curator.version>
