@@ -11,7 +11,16 @@
 
     <artifactId>goods-rpc</artifactId>
 
+    <properties>
+        <skipTests>true</skipTests>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>com.zing</groupId>
+            <artifactId>core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.zing</groupId>

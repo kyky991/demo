@@ -11,6 +11,10 @@
 
     <artifactId>user</artifactId>
 
+    <properties>
+        <skipTests>true</skipTests>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.zing</groupId>
@@ -20,13 +24,14 @@
 
         <dependency>
             <groupId>com.zing</groupId>
-            <artifactId>user-api</artifactId>
+            <artifactId>web</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.zing</groupId>
+            <artifactId>user-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

@@ -12,7 +12,11 @@
     <artifactId>goods-api</artifactId>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.zing</groupId>
+            <artifactId>core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

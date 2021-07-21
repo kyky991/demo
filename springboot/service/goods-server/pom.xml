@@ -11,7 +11,17 @@
 
     <artifactId>goods-server</artifactId>
 
+    <properties>
+        <skipTests>true</skipTests>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>com.zing</groupId>
+            <artifactId>web</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>com.zing</groupId>
             <artifactId>goods-api</artifactId>
@@ -22,11 +32,6 @@
             <groupId>com.zing</groupId>
             <artifactId>user-api</artifactId>
             <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
