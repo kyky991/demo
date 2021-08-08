@@ -48,7 +48,7 @@
         <log4j.version>1.2.16</log4j.version>
         <dubbo.version>2.7.8</dubbo.version>
         <netty-all.version>4.1.54.Final</netty-all.version>
-        <zookeeper.version>3.4.13</zookeeper.version>
+        <zookeeper.version>3.4.14</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
         <curator.version>4.0.1</curator.version>
     </properties>
