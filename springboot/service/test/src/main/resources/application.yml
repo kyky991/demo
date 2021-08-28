@@ -28,6 +28,8 @@ dubbo:
 delay:
   task:
     redis:
-      enabled: false
-    redisson:
       enabled: true
+
+nacos:
+  config:
+    server-addr: nacos.zing:8848
