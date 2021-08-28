@@ -37,7 +37,7 @@ public class TaskAutoConfiguration {
 
     @Bean
     @ConditionalOnBean({RedissonClient.class})
-    @ConditionalOnProperty(name = Constant.TASK_REDISSON_ENABLED, havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(name = Constant.TASK_REDISSON_ENABLED, havingValue = "true")
     public DelayHandler redissonDelayHandler(TaskManager taskManager, TaskProperties taskProperties, RedissonClient redissonClient) {
         WrappedDelayHandler delayHandler = new WrappedDelayHandler(new RedissonDelayHandler(redissonClient));
         delayHandler.setTaskManager(taskManager);
