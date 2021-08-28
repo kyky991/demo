@@ -15,6 +15,20 @@ spring:
         enabled: true
         server-addr: ${spring.cloud.nacos.server-addr}
         file-extension: yml
+    sentinel:
+      enabled: true
+      datasource:
+        nacos:
+          flow:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            data-id: ${spring.application.name}-flow-rules
+            group-id: SENTINEL_GROUP
+            rule-type: flow
+          degrade:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            data-id: ${spring.application.name}-degrade-rules
+            group-id: SENTINEL_GROUP
+            rule-type: degrade
 
 dubbo:
   application:
