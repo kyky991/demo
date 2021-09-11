@@ -9,6 +9,11 @@ spring:
     port: 6379
     redisson:
       config: classpath:redisson-single-dev.yml
+  elasticsearch:
+    rest:
+      uris: http://es.zing:9200
+      username: elastic
+      password: 123456
 
 redisson:
   address: redis://redis.zing:6379
