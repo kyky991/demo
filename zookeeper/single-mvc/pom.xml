@@ -46,7 +46,7 @@
         <jedis.version>2.9.0</jedis.version>
         <apache-commons-pool2>2.6.0</apache-commons-pool2>
         <log4j.version>1.2.16</log4j.version>
-        <dubbo.version>2.7.8</dubbo.version>
+        <dubbo.version>2.7.13</dubbo.version>
         <zookeeper.version>3.4.14</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
         <curator.version>4.0.1</curator.version>
