@@ -34,4 +34,14 @@ public class AspectJTest {
         return o;
     }
 
+    @AfterReturning("test()")
+    public void returning() {
+        System.out.println("after returning");
+    }
+
+    @AfterThrowing("test()")
+    public void throwing() {
+        System.out.println("after throwing");
+    }
+
 }
