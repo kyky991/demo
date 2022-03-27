@@ -1,0 +1,61 @@
+{
+  "properties": [
+    {
+      "name": "xxl.job.admin",
+      "type": "com.zing.common.xxl.job.properties.AdminProperties",
+      "description": "xxl job admin.",
+      "sourceType": "com.zing.common.xxl.job.properties.XxlJobProperties"
+    },
+    {
+      "name": "xxl.job.executor",
+      "type": "com.zing.common.xxl.job.properties.ExecutorProperties",
+      "description": "xxl job executor.",
+      "sourceType": "com.zing.common.xxl.job.properties.XxlJobProperties"
+    },
+    {
+      "name": "xxl.job.admin.addresses",
+      "type": "java.lang.String",
+      "description": "xxl job admin addresses.",
+      "sourceType": "com.zing.common.xxl.job.properties.AdminProperties"
+    },
+    {
+      "name": "xxl.job.executor.appname",
+      "type": "java.lang.String",
+      "description": "xxl job admin appname.",
+      "sourceType": "com.zing.common.xxl.job.properties.ExecutorProperties"
+    },
+    {
+      "name": "xxl.job.executor.ip",
+      "type": "java.lang.String",
+      "description": "xxl job executor ip.",
+      "sourceType": "com.zing.common.xxl.job.properties.ExecutorProperties"
+    },
+    {
+      "name": "xxl.job.executor.port",
+      "type": "java.lang.Integer",
+      "description": "xxl job executor port.",
+      "sourceType": "com.zing.common.xxl.job.properties.ExecutorProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "xxl.job.executor.accessToken",
+      "type": "java.lang.String",
+      "description": "xxl job executor accessToken.",
+      "sourceType": "com.zing.common.xxl.job.properties.ExecutorProperties"
+    },
+    {
+      "name": "xxl.job.executor.logPath",
+      "type": "java.lang.String",
+      "description": "xxl job executor logPath.",
+      "sourceType": "com.zing.common.xxl.job.properties.ExecutorProperties",
+      "defaultValue": "logs/applogs/xxl-job/jobhandler"
+    },
+    {
+      "name": "xxl.job.executor.logRetentionDays",
+      "type": "java.lang.Integer",
+      "description": "xxl job executor logRetentionDays.",
+      "sourceType": "com.zing.common.xxl.job.properties.ExecutorProperties",
+      "defaultValue": 30
+    }
+  ]
+}

@@ -19,6 +19,7 @@
         <module>redis</module>
         <module>task</module>
         <module>web</module>
+        <module>xxl-job</module>
     </modules>
 
 </project>
