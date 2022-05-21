@@ -1,0 +1,11 @@
+server:
+  port: 10003
+
+spring:
+  application:
+    name: test-es
+  elasticsearch:
+    rest:
+      uris: http://es.zing:9200
+      username: elastic
+      password: 123456

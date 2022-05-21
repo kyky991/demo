@@ -1,7 +1,7 @@
-package com.zing.test.controller;
+package com.zing.test.es.controller;
 
-import com.zing.test.domain.Item;
-import com.zing.test.repository.ItemRepository;
+import com.zing.test.es.domain.Item;
+import com.zing.test.es.repository.ItemRepository;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.elasticsearch.index.query.MatchQueryBuilder;

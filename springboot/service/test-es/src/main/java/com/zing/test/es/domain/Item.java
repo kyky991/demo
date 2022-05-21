@@ -1,4 +1,4 @@
-package com.zing.test.domain;
+package com.zing.test.es.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;

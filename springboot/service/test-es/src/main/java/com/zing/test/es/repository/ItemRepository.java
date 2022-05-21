@@ -1,6 +1,6 @@
-package com.zing.test.repository;
+package com.zing.test.es.repository;
 
-import com.zing.test.domain.Item;
+import com.zing.test.es.domain.Item;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 import java.util.List;
