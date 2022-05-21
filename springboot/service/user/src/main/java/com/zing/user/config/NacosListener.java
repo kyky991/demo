@@ -1,4 +1,4 @@
-package com.zing.test.config;
+package com.zing.user.config;
 
 import com.alibaba.nacos.api.config.ConfigType;
 import com.alibaba.nacos.api.config.annotation.NacosConfigListener;
