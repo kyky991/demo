@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.zing.common.trace.TraceClientInterceptor, \
+com.zing.common.trace.TraceHandlerInterceptor, \
+com.zing.common.trace.TraceWebMvcConfig, \
+com.zing.common.trace.TtlExecutorBeanPostProcessor
