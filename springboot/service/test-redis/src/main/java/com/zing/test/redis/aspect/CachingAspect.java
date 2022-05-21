@@ -1,6 +1,6 @@
-package com.zing.test.aspect;
+package com.zing.test.redis.aspect;
 
-import com.zing.test.annotation.Caching;
+import com.zing.test.redis.annotation.Caching;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -26,7 +26,7 @@ public class CachingAspect {
     @Autowired
     private RedissonClient redissonClient;
 
-    @Pointcut("@annotation(com.zing.test.annotation.Caching)")
+    @Pointcut("@annotation(com.zing.test.redis.annotation.Caching)")
     public void pointcut() {
     }
 

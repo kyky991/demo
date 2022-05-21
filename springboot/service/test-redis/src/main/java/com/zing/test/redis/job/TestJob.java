@@ -1,9 +1,9 @@
-package com.zing.test.job;
+package com.zing.test.redis.job;
 
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.annotation.XxlJob;
-import com.zing.test.service.TestService;
+import com.zing.test.redis.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

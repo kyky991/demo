@@ -1,7 +1,7 @@
-package com.zing.test.task.handler;
+package com.zing.test.redis.task.handler;
 
 import com.zing.common.task.TaskHandler;
-import com.zing.test.task.dto.FooTask;
+import com.zing.test.redis.task.dto.FooTask;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

@@ -1,8 +1,8 @@
-package com.zing.test.controller;
+package com.zing.test.redis.controller;
 
 import com.zing.common.task.DelayHandler;
-import com.zing.test.task.dto.BarTask;
-import com.zing.test.task.dto.FooTask;
+import com.zing.test.redis.task.dto.BarTask;
+import com.zing.test.redis.task.dto.FooTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

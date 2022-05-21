@@ -1,6 +1,6 @@
-package com.zing.test.service;
+package com.zing.test.redis.service;
 
-import com.zing.test.annotation.Caching;
+import com.zing.test.redis.annotation.Caching;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;

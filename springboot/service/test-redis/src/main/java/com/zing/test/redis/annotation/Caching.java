@@ -1,4 +1,4 @@
-package com.zing.test.annotation;
+package com.zing.test.redis.annotation;
 
 import java.lang.annotation.*;
 
