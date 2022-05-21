@@ -3,7 +3,7 @@ package com.zing.test.redis;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.zing.common.redis.codec.MixedFastjsonCodec;
-import com.zing.test.entity.Foo;
+import com.zing.test.domain.Foo;
 import com.zing.test.redis.pkg2.People;
 import org.junit.Test;
 import org.junit.runner.RunWith;

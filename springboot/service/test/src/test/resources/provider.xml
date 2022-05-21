@@ -19,9 +19,9 @@
     <dubbo:protocol name="dubbo" port="-1"/>
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.zing.test.demo.DemoService" ref="demoService" weight="1" warmup="1"/>
+    <dubbo:service interface="com.zing.test.dubbo.service.DemoService" ref="demoService" weight="1" warmup="1"/>
 
     <!-- 和本地bean一样实现服务 -->
-    <bean id="demoService" class="com.zing.test.demo.impl.DemoServiceImpl"/>
+    <bean id="demoService" class="com.zing.test.dubbo.service.impl.DemoServiceImpl"/>
 
 </beans>

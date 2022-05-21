@@ -1,4 +1,4 @@
-package com.zing.test.demo;
+package com.zing.test.dubbo.service;
 
 public interface DemoService {
 

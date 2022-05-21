@@ -1,6 +1,6 @@
 package com.zing.test.dubbo;
 
-import com.zing.test.demo.DemoService;
+import com.zing.test.dubbo.service.DemoService;
 import lombok.Data;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

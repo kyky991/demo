@@ -1,4 +1,4 @@
-package com.zing.test.entity;
+package com.zing.test.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

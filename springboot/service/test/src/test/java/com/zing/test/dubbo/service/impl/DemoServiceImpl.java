@@ -1,6 +1,6 @@
-package com.zing.test.demo.impl;
+package com.zing.test.dubbo.service.impl;
 
-import com.zing.test.demo.DemoService;
+import com.zing.test.dubbo.service.DemoService;
 
 public class DemoServiceImpl implements DemoService {
 
