@@ -13,10 +13,14 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>example</module>
         <module>goods-rpc</module>
         <module>goods-server</module>
         <module>im</module>
         <module>test</module>
+        <module>test-es</module>
+        <module>test-redis</module>
+        <module>test-web</module>
         <module>user</module>
     </modules>
 
